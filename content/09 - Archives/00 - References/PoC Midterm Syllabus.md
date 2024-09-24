@@ -8,13 +8,13 @@ Security Goals, Cryptographic Attacks, Services and Mechanisms, Techniques
 - [ ] Fermat Theorem
 - [ ] Euler Theorem
 - [ ] Testing for Primality
-- [ ] Chinese Remainder Theorem
+- [x] Chinese Remainder Theorem
 - [ ] Discrete Logirthms
 
 ## Symmetric Ciphers
-- [ ] Classic Encryption Techniques - Symmetric Cipher Model
-- [ ] Substitution Techniques
-- [ ] Transposition Techniques
+- [ ] [Classic Encryption Techniques - Symmetric Cipher Model](https://www.youtube.com/watch?v=UJiLgUtddlM&pp=ygU9bmVzbyBhY2FkZW15IGNsYXNzaWNhbCBlbmNyeXB0aW9uIHRlY2huaXF1ZXMgc3ltbWV0cmljIGNpcGhlcg%3D%3D)
+- [ ] Substitution Techniques - same as 1st
+- [ ] Transposition Techniques - same as 1st
 - [ ] Block Ciphers
 - [ ] Data Encryption Standard (DES) 
 - [ ] Strength of DES
