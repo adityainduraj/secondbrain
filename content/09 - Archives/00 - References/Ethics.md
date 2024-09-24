@@ -1,0 +1,1 @@
+Ethics is defined as the discipline dealing with what is good and bad and with moral duty and obligation 

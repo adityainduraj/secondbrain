@@ -1,0 +1,1 @@
+Personally, I used to find art spammy, but recently I've found meaning in it. Not the pretentious stuff that you see people buying and raving about, but stuff on like Pinterest and thumbnails for YouTube playlists. It evokes deep feelings somehow, so I've decided to keep track of my resources for that in stuff like [[Wallpaper Resources]]. 
