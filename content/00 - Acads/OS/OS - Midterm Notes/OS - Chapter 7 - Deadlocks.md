@@ -5,7 +5,7 @@ tags:
   - os
 references:
   - "[[Exam Schedules and Syllabus]]"
-follows: "[[Chapter 6 - Process Synchronization]]"
+follows: "[[OS - Chapter 6 - Process Synchronization]]"
 ---
 ---
 ## 1. System Model

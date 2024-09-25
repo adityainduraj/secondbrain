@@ -45,7 +45,7 @@ Thus **mosque** is encoded into **ontsml**.
 > [!handwritten]- Hill Cipher - Encryption
 > ![[hill-cipher-encryption-handwritten.png]]
 
-> [!handwritten]- Hill Cipher - $K^{-1}$  calculation
+In> [!handwritten]- Hill Cipher - $K^{-1}$  calculation
 > ![[hill-cipher-k-inverse-calculation-handwritten.png]]
 
 > [!handwritten]- Hill Cipher - Decryption
@@ -62,12 +62,26 @@ This was invented to improve on the simle monoalphabetic technique.
 **Autokey System**: The periodic nature of the keyword can be eliminated by using a non-repeating keyword that is as long as the message itself. This was proposed by Vigenere himself, in which a keyword is concatenated with the plaintext itself to provide a running key. 
 
 #### Vernam Cipher
-
-
-### One-Time Pad
- 
+- Convert alphabet to numeric, and then to binary. 
+- Perform XOR operation on the binary message alphabet and key alphabet, convert results back to alphabets. 
 
 ## Transposition Ciphers
-1. **Rail Fence Cipher**: 
-2. **Row-Column Transposition**: 
+### Rail Fence Cipher
+It takes a 'depth' value for the 'fence' and then reads each level horizontally to give the ciphertext. 
+> Remember the 'neso academy' example that you wrote down. 
+
+### Row-Transposition Cipher
+Start filling the matrix normally and add any filler characters if necessary. Then, you will be provided with a key that gives the order in which we read the columns. We then read each column vertically, top to down and concatenate to provide ciphertext.
+
+---
+# DES Algorithm
+
+> [!info]- Structure of DES Encryption Rounds
+> ![[des-encryption-round-structure.png]]
+
+## Single Round of DES Algorithm
+
+> [!info]- Structure of a Single Round
+> ![[des-single-round-structure.png]]
+> ![[des-single-round-more-info.png]]
 

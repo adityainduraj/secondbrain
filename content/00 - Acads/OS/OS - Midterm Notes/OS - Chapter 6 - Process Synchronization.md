@@ -5,7 +5,7 @@ tags:
   - os
 references:
   - "[[Exam Schedules and Syllabus]]"
-follows: "[[Chapter 5 - CPU Scheduling]]"
+follows: "[[OS - Chapter 5 - CPU Scheduling]]"
 ---
 > While revising, it's recommended to skip right to [[#Differences]] for a tabular overview. 
 ---
@@ -67,7 +67,7 @@ acquire(lock);// before entering the critical section, acquire the lock
 
 release(lock); // after leaving the critical section, release the lock. 
 ```
-Locks can lead to potential issues like [[Chapter 7 - Deadlocks]] (if multiple processes are waiting for each other's locks) or **priority inversion** (if a lower-priority process holds the lock while a higher-priority process is waiting). 
+Locks can lead to potential issues like [[OS - Chapter 7 - Deadlocks]] (if multiple processes are waiting for each other's locks) or **priority inversion** (if a lower-priority process holds the lock while a higher-priority process is waiting). 
 
 ---
 # Peterson's Solution

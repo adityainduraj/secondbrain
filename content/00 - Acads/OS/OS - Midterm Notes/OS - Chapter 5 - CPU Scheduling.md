@@ -5,7 +5,7 @@ tags:
   - os
 references:
   - "[[Exam Schedules and Syllabus]]"
-follows: "[[Chapter 4 - Threads]]"
+follows: "[[OS - Chapter 4 - Threads]]"
 ---
 ---
 

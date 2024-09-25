@@ -5,7 +5,7 @@ tags:
   - os
 references:
   - "[[Exam Schedules and Syllabus]]"
-follows: "[[Chapter 3 - Processes]]"
+follows: "[[OS - Chapter 3 - Processes]]"
 ---
 ---
 # Objectives of Multithreading
@@ -31,7 +31,7 @@ Multithreading is used to enhance the efficiency and performance of applications
 
 ---
 # Kernels and Multithreading
-The **kernel** is responsible for managing system resources, including [[Chapter 5 - CPU Scheduling]], memory and I/O. In multithreading:
+The **kernel** is responsible for managing system resources, including [[OS - Chapter 5 - CPU Scheduling]], memory and I/O. In multithreading:
 - **Thread Management**: The kernel can manage threads by allocating CPU time, handling synchronization and managing communication between threads. 
 - **Kernel Threads**: These are threads managed directly by the kernel. The kernel has full control over the thread's scheduling and execution. Switching between kernel threads involves a context switch, but it's more efficient than switching between processes. 
 - **User Threads**: These are threads managed at the user level (example -> by a user-level thread library). The kernel is unaware of user threads, so scheduling is handled in user space. They have lower overhead but may not leverage multiple CPU cores efficiently without kernel intervention. 
