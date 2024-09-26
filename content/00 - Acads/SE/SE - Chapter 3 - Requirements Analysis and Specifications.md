@@ -20,7 +20,7 @@ follows:
 > 
 > An SRS provides a starting point for general development. It provides the basis for estimating costs, schedules etc. It also forms the basics for writing the user manual, which is a very important document for the users. 
 
-> The SRS is mainly intended for users/customers, developers, testers, project managers and system analysts. Different levels ofd etail and formality is needed for each audience.
+> The SRS is mainly intended for users/customers, developers, testers, project managers and system analysts. Different levels of detail and formality is needed for each audience.
 
 ## How To Gather Requirements
 There are various ways to gather requirements. Some are listed below: 
