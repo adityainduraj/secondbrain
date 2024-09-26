@@ -40,7 +40,6 @@ The main reasons for gathering requirements is to:
 - Helps the system analyst understand what the problem is and why is it important to solve it. 
 
 ---
----
 # SRS - Software Requirements Specification
 The **main aim** of the SRS is to document and systematically organise the arrived requirements. 
 
@@ -116,11 +115,11 @@ They consist of the characteristics that **cannot be expressed as functions**. T
 ## Examples Of A Bad SRS Document
 The following are some features of a bad SRS document:
 - **Contradictions** -> The same thing being described in different ways.
-- **Ambiguity**
+- **Ambiguity** 
 - **Noise** -> Irrelevant text.
 - **Silence** -> Omission of actually relevant text.
 
----
+***
 ## Suggestions For Writing Quality Requirements
 - Keep sentences and paragraphs short.
 - Use the active voice along with proper grammar and spelling.
@@ -153,5 +152,4 @@ A typical decision table is divided into four parts:
 > Decision trees are easier to read and understand when the number of conditions **are small**. 
 
 
----
 ---
