@@ -82,7 +82,7 @@ Some options for execution:
 2. `exec()` - this system call is used after a `fork()` to replace the process' memory space with a new program
 
 ## Process Termination
-Process executes the alst statement and then asks the operation system to delete it using the `exit()` system call. 
+Process executes the last statement and then asks the operation system to delete it using the `exit()` system call. 
 1. Returns status data from child to parent (via `wait()`). 
 2. Process' resources are deallocated by the operating system. 
 

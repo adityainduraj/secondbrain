@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"3e3c08bb93f5a025","x":-500,"y":-140,"width":140,"height":60,"type":"text","text":"Feasibility Study\n"},
+		{"id":"a32a5f305582e4fc","x":-280,"y":-140,"width":160,"height":60,"type":"text","text":"Requirements Gathering"},
+		{"id":"756c66ec8f227e32","x":-60,"y":-140,"width":160,"height":60,"type":"text","text":"Requirements Analysis"},
+		{"id":"f7726ba2c6e05ecb","x":180,"y":-140,"width":180,"height":60,"type":"text","text":"Requirements Specification"},
+		{"id":"ec230b1891c690eb","x":-500,"y":0,"width":140,"height":60,"type":"text","text":"Feasibility Report"},
+		{"id":"ca607509f0c60b28","x":198,"y":-30,"width":145,"height":60,"type":"text","text":"SRS Doc"}
+	],
+	"edges":[
+		{"id":"e2598384103c75de","fromNode":"3e3c08bb93f5a025","fromSide":"right","toNode":"a32a5f305582e4fc","toSide":"left"},
+		{"id":"9f3d8c3fe75ba8df","fromNode":"a32a5f305582e4fc","fromSide":"right","toNode":"756c66ec8f227e32","toSide":"left"},
+		{"id":"af042a1ae8ae0e5d","fromNode":"756c66ec8f227e32","fromSide":"bottom","toNode":"a32a5f305582e4fc","toSide":"bottom"},
+		{"id":"847484f8dd84266b","fromNode":"756c66ec8f227e32","fromSide":"right","toNode":"f7726ba2c6e05ecb","toSide":"left"},
+		{"id":"b2060d204d05ac76","fromNode":"f7726ba2c6e05ecb","fromSide":"top","toNode":"756c66ec8f227e32","toSide":"top"},
+		{"id":"702be77ba5dfc471","fromNode":"f7726ba2c6e05ecb","fromSide":"bottom","toNode":"ca607509f0c60b28","toSide":"top"},
+		{"id":"c62c4b752d7001ea","fromNode":"3e3c08bb93f5a025","fromSide":"bottom","toNode":"ec230b1891c690eb","toSide":"top"}
+	]
+}
