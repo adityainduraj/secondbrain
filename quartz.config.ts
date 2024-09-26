@@ -25,7 +25,7 @@ const config: QuartzConfig = {
       typography: {
         header: "Inter",
         body: "Inter",
-        code: "Inter",
+        code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
