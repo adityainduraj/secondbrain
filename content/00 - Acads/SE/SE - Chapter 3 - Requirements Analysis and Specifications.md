@@ -3,7 +3,8 @@ time created: 2024-09-26 23:10
 tags:
   - academics
   - software-engineering
-references: 
+references:
+  - "[[Exam Schedules and Syllabus]]"
 follows:
 ---
 ---
@@ -23,6 +24,7 @@ follows:
 > The SRS is mainly intended for users/customers, developers, testers, project managers and system analysts. Different levels of detail and formality is needed for each audience.
 
 ## How To Gather Requirements
+
 There are various ways to gather requirements. Some are listed below: 
 1. Discuss them with customers. 
 2. Study existing procedures. 
@@ -32,7 +34,6 @@ There are various ways to gather requirements. Some are listed below:
 	3. Form Analysis -> A collection of different types of forms being used.
 
 > The attributes of a good system analyst are **experience**, and **good interaction skills**. 
-
 ## Analysis Of Gathered Requirements
 The main reasons for gathering requirements is to:
 - Clearly understand the users' requirements. 
@@ -41,7 +42,7 @@ The main reasons for gathering requirements is to:
 
 ---
 # SRS - Software Requirements Specification
-The **main aim** of the SRS is to document and systematically organise the arrived requirements. 
+The **main aim** of the [[Software Requirements Specification (SRS)]] is to document and systematically organise the arrived requirements. 
 
 > The SRS document is often referred to as a **Black Box Specification**. (The internal details are not known, but the external details are documented). 
 
