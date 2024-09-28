@@ -7,12 +7,15 @@ references:
   - "[[Linux Helpbox]]"
 source: https://www.youtube.com/watch?v=6WLaNIlDW0M&list=PL_WcXIXdDWWpuypAEKzZF2b5PijTluxRG
 ---
+
 ---
+
 # An Overview
 
 This documentation provides a comprehensive overview of NixOS configuration, focusing on custom options, conditional logic with if-else statements, and the power of special arguments (special args) in NixOS flakes.
 
 ---
+
 # Understanding NixOS Options
 
 In NixOS, the entire system configuration is defined in a file named `configuration.nix`. This file uses the Nix expression language, a purely functional language that might feel different from imperative languages like Python or JavaScript.
@@ -23,8 +26,8 @@ While NixOS provides a vast collection of pre-defined options for configuring va
 
 - **The `options` Attribute Set:** This special attribute set is where you define your custom options. Unlike directly setting options to values as you would in other programming languages, defining an option in NixOS involves specifying its **type** and **default value**.
 - **Using `lib.makeOption`:** The `lib.makeOption` function from the Nix library (`lib`) is instrumental in defining custom options. It takes two arguments:
-    - **Type (`type`):** Specifies the data type of the option. For instance, `lib.types.str` indicates a string type.
-    - **Default Value (`default`):** Sets the default value for the option. If the option is not set elsewhere in your configuration, this default value will be used.
+  - **Type (`type`):** Specifies the data type of the option. For instance, `lib.types.str` indicates a string type.
+  - **Default Value (`default`):** Sets the default value for the option. If the option is not set elsewhere in your configuration, this default value will be used.
 
 **Example:**
 
@@ -104,6 +107,7 @@ message
 In the Nix example, the `message` variable is assigned the value "Condition is true" if `condition` is true; otherwise, it's assigned "Condition is false." The entire `if` expression evaluates to a single value that is then assigned to the variable.
 
 ---
+
 # Conditional Package Installation
 
 A practical use of if-else statements in NixOS is the conditional installation of packages. You can leverage conditional logic within your `environment.systemPackages` or `home.packages` (if using Home Manager) to include packages based on other configuration settings.
@@ -134,7 +138,9 @@ In this example, we conditionally add packages to the `environment.systemPackage
 
 - **Both `if` and `else` are Required:** Unlike some other languages, Nix requires both an `if` and an `else` branch in your conditional statements. This ensures that the expression always evaluates to a value.
 - **Parentheses for Clarity:** Using parentheses to enclose your conditional logic, especially when it becomes complex, can significantly enhance readability.
+
 ---
+
 # Special Args in NixOS Flakes
 
 Nix flakes introduce a powerful feature called "special args" that simplifies configuration management, particularly for users with complex setups or those managing configurations across multiple machines.
@@ -146,58 +152,63 @@ Special args provide a way to pass variables from your `flake.nix` file (the hea
 ## Setting Up Special Args
 
 1. **Declare Variables:** In your `flake.nix` file, within the `outputs` definition, declare the variables you want to use as special args. It's generally recommended to use a `let` binding for organization:
-    ```
-    outputs = { self, nixpkgs, ... }@args: let
-      # System Settings
-      system = "x86_64-linux";
-      hostname = "my-nixos-system";
-      username = "myusername";
-    
-      # User Settings
-      editor = "vim";
-      browser = "firefox";
-    in {
-      # ... rest of your flake outputs
-    };
-    ```
-2. **Pass Variables to NixOS and Home Manager:** When defining the `nixosConfiguration` and `homeManagerConfiguration` outputs in your `flake.nix`, pass the declared variables using the `specialArgs` (for `nixosConfiguration`) or `extraSpecialArgs` (for `homeManagerConfiguration`) arguments:
-    ```
-    nixosConfiguration = nixpkgs.lib.nixosSystem {
-      system = system;
-      modules = [
-        # ... your modules
-      ];
-      specialArgs = { inherit username hostname; };
-    };
-    
-    homeManagerConfiguration = {pkgs, ...}: {
-        imports = [
-            # ... your home-manager modules
-        ];
-        extraSpecialArgs = { inherit username editor browser; };
-    };
-    ```
-3. **Access Variables in Modules:** In your configuration modules (`configuration.nix`, `home.nix`, and any other imported modules), include the special args as arguments to the module functions:
-    ```
-    # configuration.nix
-    { config, pkgs, username, hostname }:
-    
-    {
-      # Access special args
-      users.users.${username} = { ... };
-      networking.hostName = hostname;
-    }
-    ```
-    ```
-    # home.nix
-    { config, pkgs, lib, username, editor, browser }:
-    
-    {
-      home.username = username;
-      home.packages = with pkgs; [ editor browser ];
-    }
-    ```
 
+   ```
+   outputs = { self, nixpkgs, ... }@args: let
+     # System Settings
+     system = "x86_64-linux";
+     hostname = "my-nixos-system";
+     username = "myusername";
+
+     # User Settings
+     editor = "vim";
+     browser = "firefox";
+   in {
+     # ... rest of your flake outputs
+   };
+   ```
+
+2. **Pass Variables to NixOS and Home Manager:** When defining the `nixosConfiguration` and `homeManagerConfiguration` outputs in your `flake.nix`, pass the declared variables using the `specialArgs` (for `nixosConfiguration`) or `extraSpecialArgs` (for `homeManagerConfiguration`) arguments:
+
+   ```
+   nixosConfiguration = nixpkgs.lib.nixosSystem {
+     system = system;
+     modules = [
+       # ... your modules
+     ];
+     specialArgs = { inherit username hostname; };
+   };
+
+   homeManagerConfiguration = {pkgs, ...}: {
+       imports = [
+           # ... your home-manager modules
+       ];
+       extraSpecialArgs = { inherit username editor browser; };
+   };
+   ```
+
+3. **Access Variables in Modules:** In your configuration modules (`configuration.nix`, `home.nix`, and any other imported modules), include the special args as arguments to the module functions:
+
+   ```
+   # configuration.nix
+   { config, pkgs, username, hostname }:
+
+   {
+     # Access special args
+     users.users.${username} = { ... };
+     networking.hostName = hostname;
+   }
+   ```
+
+   ```
+   # home.nix
+   { config, pkgs, lib, username, editor, browser }:
+
+   {
+     home.username = username;
+     home.packages = with pkgs; [ editor browser ];
+   }
+   ```
 
 ## Benefits of Special Args
 
@@ -264,8 +275,7 @@ userSettings = rec {
 In this example, `spawnEditor`, a special arg within the `userSettings` attribute set, is dynamically determined based on the value of another special arg, `editor`, within the same set. The `rec` keyword is crucial here, as it enables this recursive calculation. Without it, referring to `userSettings.editor` within the definition of `spawnEditor` would lead to an error.
 
 ---
+
 # Conclusion
 
 This detailed documentation has covered various aspects of NixOS configuration, ranging from defining custom options and using conditional logic to harnessing the power of special args in Nix flakes. Remember, NixOS configuration is highly flexible and customizable. Explore different approaches, experiment with various options, and tailor your system to perfectly match your requirements!
-
----

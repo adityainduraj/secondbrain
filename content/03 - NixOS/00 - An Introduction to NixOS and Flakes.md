@@ -7,16 +7,21 @@ references:
   - "[[Linux Helpbox]]"
 source: https://www.youtube.com/watch?v=6WLaNIlDW0M&list=PL_WcXIXdDWWpuypAEKzZF2b5PijTluxRG
 ---
+
 ---
+
 # Overview
+
 This documentation provides a comprehensive overview of NixOS for beginners, covering the fundamental concepts presented in the provided YouTube videos. We'll explore the core ideas behind NixOS, its configuration-driven approach, and the benefits of using flakes for managing your system.
 
 ---
+
 # What is NixOS?
 
 NixOS is not your typical Linux distribution. Unlike traditional distributions that rely on package managers like APT or YUM, NixOS takes a completely different route: **configuration files.** Instead of installing and managing applications through app stores or graphical settings menus, you define your entire system—applications, services, and configurations—in declarative configuration files.
 
 ---
+
 # Advantages of NixOS
 
 While this approach might seem unusual at first, it brings several compelling advantages:
@@ -26,6 +31,7 @@ While this approach might seem unusual at first, it brings several compelling ad
 - **Disaster Recovery:** NixOS's configuration-driven nature makes disaster recovery a breeze. If something goes wrong, you can rebuild your system from your configuration files, restoring it to a known working state. NixOS also provides rollback functionality to revert to a previous working configuration if an update causes issues.
 
 ---
+
 # Understanding NixOS Configuration
 
 At the heart of NixOS lies the configuration file, typically located at `/etc/nixos/configuration.nix`. This file is written in the Nix Expression Language, a purely functional language. Don't let that intimidate you!
@@ -41,6 +47,7 @@ Let's break down the key elements of a NixOS configuration:
 When you install packages in NixOS, they don't reside in the usual locations like `/usr/bin`. Instead, NixOS employs a unique approach with the **Nix store.** The Nix store is a central, immutable storage location for all software components installed on your system. Each package, along with its dependencies, gets a unique path within the Nix store, ensuring isolation and preventing dependency conflicts.
 
 ---
+
 # Embracing Flakes: Next-Level NixOS Management
 
 While channels are the default method for managing package versions in NixOS, the NixOS community has largely transitioned to using **flakes.** Flakes offer several advantages over channels, particularly for managing and reproducing your system configuration over time.
@@ -53,10 +60,12 @@ While channels are the default method for managing package versions in NixOS, th
 ## Transitioning to Flakes
 
 1. **Enable Flakes:** To start using flakes, you need to enable them explicitly in your `configuration.nix` file. Add the following option:
-    ```
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    ```
-    This enables the necessary commands for working with flakes.
+
+   ```
+   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+   ```
+
+   This enables the necessary commands for working with flakes.
 2. **Structure Your Flake:** Create a `flake.nix` file in your preferred configuration directory. This file will house your flake configuration, including inputs (like the Nix package repository) and outputs (your NixOS system configuration).
 3. **Define Inputs:** Specify the sources your flake depends on, starting with the Nix package repository. You'll define the URL of the repository and the specific branch (stable or unstable) you want to use.
 4. **Define Outputs:** Describe your NixOS system configuration as an output within the `flake.nix` file. This involves providing a name for your configuration, the system architecture, and the modules you want to include.
@@ -65,24 +74,31 @@ While channels are the default method for managing package versions in NixOS, th
 ## Working with Your Flake
 
 - **Building Your System:** To build your system using the flake, use the command:
-    ```
-    sudo nixos-rebuild switch --flake .
-    ```
-    This command instructs NixOS to use the `flake.nix` file in the current directory to build and activate your system configuration. You might need to specify the path to your flake or a specific configuration name within your flake if it differs from your hostname.
+
+  ```
+  sudo nixos-rebuild switch --flake .
+  ```
+
+  This command instructs NixOS to use the `flake.nix` file in the current directory to build and activate your system configuration. You might need to specify the path to your flake or a specific configuration name within your flake if it differs from your hostname.
 - **Updating Your Flake:** To update your `flake.lock` file with the latest package versions from your defined inputs, run:
-    ```
-    nix flake update
-    ```
-    Remember, this updates only the `flake.lock` file, not your system itself.
+
+  ```
+  nix flake update
+  ```
+
+  Remember, this updates only the `flake.lock` file, not your system itself.
 - **Updating Your System:** To apply the updated package versions from your `flake.lock` and rebuild your system, execute:
-    ```
-    sudo nixos-rebuild switch --flake .
-    ```
-    This ensures your system is aligned with the latest versions specified in your flake.
+
+  ```
+  sudo nixos-rebuild switch --flake .
+  ```
+
+  This ensures your system is aligned with the latest versions specified in your flake.
 
 By embracing flakes, you gain precise control over your system's state, making it incredibly easy to reproduce, maintain, and roll back to previous configurations.
 
 ---
+
 # Supplementing the NixOS Notes
 
 Let's enhance the existing documentation with information from the transcripts that might have been missed.
@@ -103,4 +119,3 @@ Let's enhance the existing documentation with information from the transcripts t
 
 By integrating these supplementary points and insights, you'll gain a richer understanding of NixOS and its unique approach to system configuration and management.
 
----
