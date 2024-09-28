@@ -1,7 +1,18 @@
-# Overview
+---
+time created: 2024-09-28 16:14
+tags:
+  - linux
+  - academics
+references:
+  - "[[Linux Helpbox]]"
+source: https://www.youtube.com/watch?v=6WLaNIlDW0M&list=PL_WcXIXdDWWpuypAEKzZF2b5PijTluxRG
+---
+---
+# An Overview
 
 This documentation provides a comprehensive overview of NixOS configuration, focusing on custom options, conditional logic with if-else statements, and the power of special arguments (special args) in NixOS flakes.
 
+---
 # Understanding NixOS Options
 
 In NixOS, the entire system configuration is defined in a file named `configuration.nix`. This file uses the Nix expression language, a purely functional language that might feel different from imperative languages like Python or JavaScript.
@@ -92,6 +103,7 @@ message
 
 In the Nix example, the `message` variable is assigned the value "Condition is true" if `condition` is true; otherwise, it's assigned "Condition is false." The entire `if` expression evaluates to a single value that is then assigned to the variable.
 
+---
 # Conditional Package Installation
 
 A practical use of if-else statements in NixOS is the conditional installation of packages. You can leverage conditional logic within your `environment.systemPackages` or `home.packages` (if using Home Manager) to include packages based on other configuration settings.
@@ -122,7 +134,7 @@ In this example, we conditionally add packages to the `environment.systemPackage
 
 - **Both `if` and `else` are Required:** Unlike some other languages, Nix requires both an `if` and an `else` branch in your conditional statements. This ensures that the expression always evaluates to a value.
 - **Parentheses for Clarity:** Using parentheses to enclose your conditional logic, especially when it becomes complex, can significantly enhance readability.
-
+---
 # Special Args in NixOS Flakes
 
 Nix flakes introduce a powerful feature called "special args" that simplifies configuration management, particularly for users with complex setups or those managing configurations across multiple machines.
@@ -251,6 +263,9 @@ userSettings = rec {
 
 In this example, `spawnEditor`, a special arg within the `userSettings` attribute set, is dynamically determined based on the value of another special arg, `editor`, within the same set. The `rec` keyword is crucial here, as it enables this recursive calculation. Without it, referring to `userSettings.editor` within the definition of `spawnEditor` would lead to an error.
 
+---
 # Conclusion
 
 This detailed documentation has covered various aspects of NixOS configuration, ranging from defining custom options and using conditional logic to harnessing the power of special args in Nix flakes. Remember, NixOS configuration is highly flexible and customizable. Explore different approaches, experiment with various options, and tailor your system to perfectly match your requirements!
+
+---
